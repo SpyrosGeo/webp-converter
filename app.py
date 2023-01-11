@@ -20,7 +20,7 @@ def clear_folder():
         return
     for file in dir_list:
         os.remove(f'{PATH}{file}')
-    cprint('Files removed!','black','on_cya ')
+    cprint('Files removed!','black','on_cyan')
 
 
 def get_random_string(length):
@@ -29,9 +29,12 @@ def get_random_string(length):
     result_str = ''.join(random.choice(letters) for i in range(length))
     return result_str
 def save_image_from_url():
-    img_data = requests.get(link).content
-    with open('temp.webp','wb') as handler:
-        handler.write(img_data)
+    try:
+        img_data = requests.get(link).content
+        with open('temp.webp','wb') as handler:
+            handler.write(img_data)
+    except:
+        cprint(f'Error while processing URL:{link}','white','on_red')
 
 
 def convert_to_jpg():
