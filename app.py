@@ -1,4 +1,4 @@
-#!/usr/bin/python3.9
+#!/usr/bin/python3
 import sys
 import requests
 from PIL import Image
@@ -41,6 +41,7 @@ def convert_to_jpg():
     name = get_random_string(8)
     im = Image.open('temp.webp').convert('RGB')
     im.save(f'{PATH}{name}.jpg','jpeg')
+    cprint(f'file ${name}.jpg was saved','black','on_cyan')
 
 if(link=="-h" or len(sys.argv)==0):
     text = colored("Webp to jpg converter","green",attrs=["reverse","blink"])
