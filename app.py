@@ -15,6 +15,7 @@ def show_list():
     return  os.listdir(PATH)
 
 def clear_folder():
+    dir_list =show_list()
     if (len(dir_list)==0):
         cprint('Directory is Empty','white','on_red')
         return
@@ -38,6 +39,7 @@ def save_image_from_url():
 
 
 def convert_to_jpg():
+    clear_folder()
     name = get_random_string(8)
     im = Image.open('temp.webp').convert('RGB')
     im.save(f'{PATH}{name}.jpg','jpeg')
@@ -58,7 +60,6 @@ elif(link=="-l"):
     dir_list =  show_list()
     print('Files:',dir_list)
 elif(link=="-d"):
-    dir_list =show_list()
     clear_folder()
 
 else:
