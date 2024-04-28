@@ -43,18 +43,18 @@ def convert_to_jpg():
     name = get_random_string(8)
     im = Image.open('temp.webp').convert('RGB')
     im.save(f'{PATH}{name}.jpg','jpeg')
-    cprint(f'file ${name}.jpg was saved','black','on_cyan')
+    cprint(f'file ${name}.jpg was saved','wihite','on_cyan')
 
 if(link=="-h" or len(sys.argv)==0):
     text = colored("Webp to jpg converter","green",attrs=["reverse","blink"])
     print(text)
     print("========")
-    cprint("Usage: Run the script with the image URL as argument","black","on_cyan")
+    cprint("Usage: Run the script with the image URL as argument","white","on_black")
     print("========")
-    cprint("Available Flags:","green","on_black")
-    cprint("-h: Help ","green","on_black")
-    cprint("-l: Prints all files on directory","green","on_black")
-    cprint("-d: Deletes all files on directory","green","on_black")
+    cprint("Available Flags:","white","on_black")
+    cprint("-h: Help ","white","on_black")
+    cprint("-l: Prints all files on directory","white","on_black")
+    cprint("-d: Deletes all files on directory","white","on_black")
 
 elif(link=="-l"):
     dir_list =  show_list()
